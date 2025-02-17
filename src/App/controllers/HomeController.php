@@ -3,8 +3,6 @@ namespace App\Controllers;
 
 use App\Services\TaskService;
 
-use function App\redirectTo;
-
  class HomeController {
     private TaskService $service;
     public function __construct() {
