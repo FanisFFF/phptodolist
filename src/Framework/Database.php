@@ -14,5 +14,8 @@ class Database{
     public function query(string $sql){
         return $this->connection->query($sql);
     }
+    public function id(){
+        return $this->connection->insert_id;
+    }
 
 }

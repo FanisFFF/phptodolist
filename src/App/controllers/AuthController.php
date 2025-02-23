@@ -1,8 +1,14 @@
 <?php 
 namespace App\Controllers;
 
+use App\Services\UserService;
+
 class AuthController
 {
+    private UserService $service;
+    public function __construct() {
+        $this->service = new UserService;
+    }
     public function loginView()
     {
         include __DIR__ . '/../view/login.php';
@@ -17,6 +23,6 @@ class AuthController
     }
     public function  register()
     {
-        var_dump($_POST);    
+         $this->service->create($_POST);
     }
 }

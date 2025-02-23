@@ -11,3 +11,6 @@
     </div>
     <input type="submit">
 </form>
+<div>
+    <h2>Already have an account? <a href="login">Log In</a></h2>
+</div>

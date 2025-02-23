@@ -3,11 +3,12 @@ namespace App\Middlewares;
 
 class AuthRequiredMiddleware
 {
-    public function resolve(callable $next)
+    public function resolve()
     {
         if(empty($_SESSION)){
-            echo 'middleware active';
+            header('Location: login');
+            http_response_code(302);
+            exit;
         }
-        $next();
     }
 }
