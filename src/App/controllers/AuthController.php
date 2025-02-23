@@ -15,7 +15,7 @@ class AuthController
     }
     public function login()
     {
-        var_dump($_POST);
+        $this->service->login($_POST);
     }
     public function registerView()
     {
