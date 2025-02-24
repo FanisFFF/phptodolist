@@ -55,4 +55,10 @@ class UserService
             }          
         }
     }
+    public function logout(){
+        session_unset();
+        header('Location: login');
+        http_response_code(302);
+        exit;
+    }
 }

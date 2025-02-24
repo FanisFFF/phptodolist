@@ -16,6 +16,7 @@ $app->add('post','/',[HomeController::class,'add']);
 $app->add('delete','/',[HomeController::class,'delete']);
 $app->add('get','/login',[AuthController::class,'loginView']);
 $app->add('post','/login',[AuthController::class,'login']);
+$app->add('get','/logout',[AuthController::class,'logout'])->addMiddleware(AuthRequiredMiddleware::class);
 $app->add('get','/register',[AuthController::class,'registerView']);
 $app->add('post','/register',[AuthController::class,'register']);;
 $path = substr(parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH),8);

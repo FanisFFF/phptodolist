@@ -25,4 +25,8 @@ class AuthController
     {
          $this->service->create($_POST);
     }
+    public function logout()
+    {
+        $this->service->logout();
+    }
 }
