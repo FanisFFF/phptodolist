@@ -1,14 +1,4 @@
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname='todoapp';
-$sql = "SELECT id,user,task FROM task WHERE user=user";
-$db =  new mysqli($servername,$username,$password,$dbname);
-$data = $db->query($sql);
-$isOpen = false;
-$module = '<h1>Hello worl</h1>';
-?>
+<!--view/todo.php-->
 <?php require __DIR__ . '/partials/header.php';?>
 <body>
 <?php require __DIR__ . '/partials/navigation.php';?>
@@ -22,8 +12,8 @@ $module = '<h1>Hello worl</h1>';
     <li >
         <form method="post" style="display: flex; align-items:center;gap:1rem;">
             <input type="hidden" name="_METHOD" value="DELETE" />
-            <p><?php echo htmlspecialchars($task['task']); ?></p>
-            <input type="text" name="delete" hidden value="<?php echo $task['id']; ?>">
+            <p><?php echo htmlspecialchars($task[1]); ?></p>
+            <input type="text" name="delete" hidden value="<?php echo $task[0]; ?>">
             <button type="submit">x</button>
         </form>
     </li>

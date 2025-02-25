@@ -7,8 +7,10 @@ use App\Services\TaskService;
     private TaskService $service;
     public function __construct() {
         $this->service = new TaskService;
+        
     }
     public function home() {
+        $data =  $this->service->get();
         include __DIR__ . '/../view/todo.php';
     }
     public function add(){

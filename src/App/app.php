@@ -7,9 +7,6 @@ use Framework\Router;
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-// session_unset();
-echo $_SESSION['user'] . '<br>';
-var_dump($_SESSION);
 $app = new Router;
 $app->add('get','/',[HomeController::class,'home'])->addMiddleware(AuthRequiredMiddleware::class);
 $app->add('post','/',[HomeController::class,'add']);
