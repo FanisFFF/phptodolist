@@ -16,6 +16,7 @@
             <input type="text" name="delete" hidden value="<?php echo $task[0]; ?>">
             <button type="submit">x</button>
         </form>
+        <a href="<?php echo $task[0]?>">edit</a>
     </li>
 <?php endforeach; ?>
   </ul>

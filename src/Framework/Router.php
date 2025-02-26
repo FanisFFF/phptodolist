@@ -16,7 +16,13 @@ class Router
     }
     public function dispatch(string $path)
     {
-        $method = $_SERVER["REQUEST_METHOD"];   
+
+        $pathParams = explode('/',$path);
+        if($pathParams[0]==''&& is_numeric($pathParams[1])){
+            $path = '/{id}';
+        }
+        $method = $_SERVER["REQUEST_METHOD"];
+
         $method = strtoupper($_POST['_METHOD'] ?? $method);
         foreach($this->routes as $route){
             if($route['path'] == $path&&$route['method']==$method){

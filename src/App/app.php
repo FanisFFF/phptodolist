@@ -9,6 +9,8 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 $app = new Router;
 $app->add('get','/',[HomeController::class,'home'])->addMiddleware(AuthRequiredMiddleware::class);
+$app->add('get','/{id}',[HomeController::class,'editView'])->addMiddleware(AuthRequiredMiddleware::class);
+$app->add('post','/{id}',[HomeController::class,'edit'])->addMiddleware(AuthRequiredMiddleware::class);
 $app->add('post','/',[HomeController::class,'add']);
 $app->add('delete','/',[HomeController::class,'delete']);
 $app->add('get','/login',[AuthController::class,'loginView']);
